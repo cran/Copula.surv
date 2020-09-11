@@ -1,12 +1,14 @@
-Test.Clayton<-function(x.obs,y.obs,dx,dy,lower=0.001,upper=50){
-  theta1=U1.Clayton(x.obs,y.obs,dx,dy)["theta"]
-  theta2=U2.Clayton(x.obs,y.obs,dx,dy)["theta"]
-  stat=log(theta1)-log(theta2)
-  
+Test.Clayton<-function(x.obs,y.obs,dx,dy,lower=0.001,upper=50,U.plot=TRUE){
+  alpha1=U1.Clayton(x.obs,y.obs,dx,dy,lower,upper,U.plot)["alpha"]
+  alpha2=U2.Clayton(x.obs,y.obs,dx,dy)["alpha"]
+  stat=log(alpha1)-log(alpha2)
+  stat=unname(stat)
+
   Stat<-function(x.obs,y.obs,dx,dy){
-    theta1=U1.Clayton(x.obs,y.obs,dx,dy,lower,upper)["theta"]
-    theta2=U2.Clayton(x.obs,y.obs,dx,dy)["theta"]
-    log(theta1)-log(theta2)
+    alpha1=U1.Clayton(x.obs,y.obs,dx,dy,lower,upper,U.plot=FALSE)["alpha"]
+    alpha2=U2.Clayton(x.obs,y.obs,dx,dy)["alpha"]
+    stat=log(alpha1)-log(alpha2)
+    unname(stat)
   }
   n=length(x.obs)
   T.del=numeric(n)
@@ -16,7 +18,7 @@ Test.Clayton<-function(x.obs,y.obs,dx,dy,lower=0.001,upper=50){
   V=(n-1)^2/n*var(T.del)
   Z=stat/sqrt(V)
   P=1-pchisq(Z^2,df=1)
-  
-  Res=c(theta1=unname(theta1),theta2=unname(theta2),Stat=stat,Z=Z,P=P)
+
+  Res=c(alpha1=unname(alpha1),alpha2=unname(alpha2),Stat=stat,Z=Z,P=P)
   return(Res)
 }

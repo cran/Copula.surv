@@ -1,2 +1,3 @@
 exportPattern("^[[:alpha:]]+")
 importFrom("stats", "pchisq", "uniroot", "dnorm", "integrate", "pnorm", "runif", "var", "qchisq", "qnorm", "sd")
+importFrom("graphics", "abline", "curve","points")

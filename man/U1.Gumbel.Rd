@@ -1,13 +1,13 @@
-\name{U1.Clayton}
-\alias{U1.Clayton}
+\name{U1.Gumbel}
+\alias{U1.Gumbel}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Estimation of an association parameter via the pseudo-likelihood}
+\title{Estimation of an association parameter via the unweighted estimator}
 \description{
-Estimate the association parameter (alpha) of the Clayton copula using bivariate survival data.
- The estimator was derived by Clayton (1978) and reformulated by Emura, Lin and Wang (2010).
+Estimate the association parameter of the Gumbel copula using bivariate survival data.
+ The estimator was derived by Emura, Lin and Wang (2010).
 }
 \usage{
-U1.Clayton(x.obs,y.obs,dx,dy,lower=0.001,upper=50,U.plot=TRUE)
+U1.Gumbel(x.obs,y.obs,dx,dy,lower=0.1,upper=50,U.plot=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,7 +17,7 @@ U1.Clayton(x.obs,y.obs,dx,dy,lower=0.001,upper=50,U.plot=TRUE)
   \item{dy}{censoring indicators for Y}
   \item{lower}{lower bound for the association parameter}
   \item{upper}{upper bound for the association parameter}
-  \item{U.plot}{if TRUE, draw the plot of U_1(alpha)}
+  \item{U.plot}{if TRUE, draw the plot of U_1(theta)}
 }
 
 \details{
@@ -25,28 +25,31 @@ Details are seen from the references.
 }
 
 \value{
-  \item{alpha}{association parameter}
-  \item{tau}{Kendall's tau (=alpha/(alpha+2))}
+  \item{theta}{association parameter}
+  \item{tau}{Kendall's tau (=theta/(theta+2))}
 }
 \references{
-Clayton DG (1978). A model for association in bivariate life tables and its
- application to epidemiological studies of familial tendency in chronic disease
- incidence. Biometrika 65: 141-51.
-
 Emura T, Lin CW, Wang W (2010) A goodness-of-fit test for Archimedean copula models
  in the presence of right censoring, Compt Stat Data Anal 54: 3033-43
 }
 \author{Takeshi Emura}
 
 \examples{
+x.obs=c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
+y.obs=c(2,1,4,5,6,8,3,7,10,9,11,12,13,14,15)
+dx=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+dy=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+U1.Gumbel(x.obs,y.obs,dx,dy)
+
 n=100
 Dat=simu.Clayton(n=n,scale1=1,scale2=2,shape1=0.5,shape2=2,alpha=1)
 x.obs=Dat[,"X"]
 y.obs=Dat[,"Y"]
 dx=dy=rep(1,n) ## uncensored data
-U1.Clayton(x.obs,y.obs,dx,dy)
+U1.Gumbel(x.obs,y.obs,dx,dy)
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ Clayton copula }% use one of  RShowDoc("KEYWORDS")
+\keyword{ Gumbel copula }% use one of  RShowDoc("KEYWORDS")
 \keyword{ Estimation }% __ONLY ONE__ keyword per line

@@ -13,10 +13,11 @@ U2.Clayton<-function(x.obs,y.obs,dx,dy){
       }
     }
   }
-
+  
   delta=delta/m
-  alpha=(2*delta-1)/(1-delta)
-  tau=alpha/(alpha+2)
-
-  return(c(alpha=alpha,tau=tau))
+  theta=(2*delta-1)/(1-delta)
+  tau=theta/(theta+2)
+ 
+  return(c(theta=theta,tau=tau))
 }
+  

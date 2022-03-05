@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Estimation of an association parameter via the pseudo-likelihood}
 \description{
-Estimate the association parameter (alpha) of the Clayton copula using bivariate survival data.
+Estimate the association parameter of the Clayton copula using bivariate survival data.
  The estimator was derived by Clayton (1978) and reformulated by Emura, Lin and Wang (2010).
 }
 \usage{
@@ -17,7 +17,7 @@ U1.Clayton(x.obs,y.obs,dx,dy,lower=0.001,upper=50,U.plot=TRUE)
   \item{dy}{censoring indicators for Y}
   \item{lower}{lower bound for the association parameter}
   \item{upper}{upper bound for the association parameter}
-  \item{U.plot}{if TRUE, draw the plot of U_1(alpha)}
+  \item{U.plot}{if TRUE, draw the plot of U_1(theta)}
 }
 
 \details{
@@ -25,8 +25,8 @@ Details are seen from the references.
 }
 
 \value{
-  \item{alpha}{association parameter}
-  \item{tau}{Kendall's tau (=alpha/(alpha+2))}
+  \item{theta}{association parameter}
+  \item{tau}{Kendall's tau (=theta/(theta+2))}
 }
 \references{
 Clayton DG (1978). A model for association in bivariate life tables and its
@@ -39,14 +39,28 @@ Emura T, Lin CW, Wang W (2010) A goodness-of-fit test for Archimedean copula mod
 \author{Takeshi Emura}
 
 \examples{
-n=100
-Dat=simu.Clayton(n=n,scale1=1,scale2=2,shape1=0.5,shape2=2,alpha=1)
-x.obs=Dat[,"X"]
-y.obs=Dat[,"Y"]
-dx=dy=rep(1,n) ## uncensored data
+n=200
+theta_true=2 ## association parameter ##
+r1_true=1 ## hazard for X
+r2_true=1 ## hazard for Y
+
+set.seed(1)
+V1=runif(n)
+V2=runif(n)
+X=-1/r1_true*log(1-V1)
+W=(1-V1)^(-theta_true)
+Y=1/theta_true/r2_true*log(  1-W+W*(1-V2)^(-theta_true/(theta_true+1))  )
+C=runif(n,min=0,max=5)
+
+x.obs=pmin(X,C)
+y.obs=pmin(Y,C)
+dx=X<=C
+dy=Y<=C
+
 U1.Clayton(x.obs,y.obs,dx,dy)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ Clayton copula }% use one of  RShowDoc("KEYWORDS")
-\keyword{ Estimation }% __ONLY ONE__ keyword per line
+\keyword{ Goodness-of-fit test }% __ONLY ONE__ keyword per line

@@ -1,0 +1,18 @@
+simu.FGM=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
+
+  if((-1>alpha)|(alpha>1)){warning("Should be -1<=alpha<=1")}
+
+  U.vec=V.vec=X.vec=Y.vec=numeric(n)
+  for (i in 1:n){
+    U=runif(1,0,1)
+    W=runif(1,0,1)
+    func=function(v){ W-v*(1+alpha*(1-v)*(1-2*U)) }
+    V=uniroot(func,lower=0,upper=1)$root
+    U.vec[i]=U
+    V.vec[i]=V
+    X.vec[i]=(-log(U)/scale1)^(1/shape1)
+    Y.vec[i]=(-log(V)/scale2)^(1/shape2)
+  }
+  print(c(true_Kendall_tau=2*alpha/9))
+  cbind(U=U.vec,V=V.vec,X=X.vec,Y=Y.vec)
+}

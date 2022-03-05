@@ -6,7 +6,7 @@
 Perform a goodness-of-fit test for the Gumbel copula based on Emura, Lin and Wang (2010).
 }
 \usage{
-Test.Gumbel(x.obs,y.obs,dx,dy,lower=0.1,upper=50,U.plot=TRUE)
+Test.Gumbel(x.obs,y.obs,dx,dy,lower=0.01,upper=50,U.plot=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,11 +24,11 @@ See the references.
 }
 
 \value{
-  \item{alpha1}{association parameter by the pseudo-likelihood estimator}
-  \item{alpha2}{association parameter by the unweighted estimator}
-  \item{Stat}{log(alpha1)-log(alpha2)}
-  \item{Z}{Z-value of the goodness-of-fit for the Gumbel copula}
-  \item{P}{P-value of the goodness-of-fit for the Gumbel copula}
+  \item{theta1}{association parameter by the pseudo-likelihood estimator}
+  \item{theta2}{association parameter by the unweighted estimator}
+  \item{Stat}{log(theta1)-log(theta2)}
+  \item{Z}{Z-value of the goodness-of-fit for the Clayton copula}
+  \item{P}{P-value of the goodness-of-fit for the Clayton copula}
 }
 \references{
 Emura T, Lin CW, Wang W (2010) A goodness-of-fit test for Archimedean copula models
@@ -41,16 +41,6 @@ x.obs=c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
 y.obs=c(2,1,4,5,6,8,3,7,10,9,11,12,13,14,15)
 dx=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 dy=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
-Test.Gumbel(x.obs,y.obs,dx,dy)
-
-n=20
-set.seed(1)
-Dat=simu.Clayton(n=n,alpha=2)
-C=runif(n,min=0,max=5)
-x.obs=pmin(Dat[,"X"],C)
-y.obs=pmin(Dat[,"Y"],C)
-dx=Dat[,"X"]<=C
-dy=Dat[,"Y"]<=C
 Test.Gumbel(x.obs,y.obs,dx,dy)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

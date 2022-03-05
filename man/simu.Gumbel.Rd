@@ -12,7 +12,7 @@ simu.Gumbel(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{n}{sample size}
-  \item{alpha}{association parameter}
+  \item{alpha}{association (copula) parameter}
   \item{scale1}{scale parameter for X}
   \item{scale2}{scale parameter for Y}
   \item{shape1}{shape parameter for X}

@@ -8,7 +8,7 @@ simu.Gumbel=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
       A=(-log(U))^alpha/U*((-log(U))^(alpha+1)+(-log(v))^(alpha+1))^(-alpha/(alpha+1))
       A*exp(-((-log(U))^(alpha+1)+(-log(v))^(alpha+1))^(1/(alpha+1)))-W
     }
-    V=uniroot(Gumbul,lower=0,upper=1)$root
+    V=uniroot(Gumbul,lower=0.00000000001,upper=0.9999999999)$root
 
     U.vec[i]=U
     V.vec[i]=V

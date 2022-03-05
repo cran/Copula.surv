@@ -25,9 +25,9 @@ See the references.
 }
 
 \value{
-  \item{alpha1}{association parameter by the pseudo-likelihood estimator}
-  \item{alpha2}{association parameter by the unweighted estimator}
-  \item{Stat}{log(alpha1)-log(alpha2)}
+  \item{theta1}{association parameter by the pseudo-likelihood estimator}
+  \item{theta2}{association parameter by the unweighted estimator}
+  \item{Stat}{log(theta1)-log(theta2)}
   \item{Z}{Z-value of the goodness-of-fit for the Clayton copula}
   \item{P}{P-value of the goodness-of-fit for the Clayton copula}
 }
@@ -42,14 +42,25 @@ Shih JH (1998) A goodness-of-fit test for association in a bivariate survival mo
 
 \examples{
 n=20
+theta_true=2 ## association parameter ##
+r1_true=2 ## hazard for X
+r2_true=2 ## hazard for Y
+
 set.seed(1)
-Dat=simu.Clayton(n=n,alpha=2)
+V1=runif(n)
+V2=runif(n)
+X=-1/r1_true*log(1-V1)
+W=(1-V1)^(-theta_true)
+Y=1/theta_true/r2_true*log(  1-W+W*(1-V2)^(-theta_true/(theta_true+1))  )
 C=runif(n,min=0,max=5)
-x.obs=pmin(Dat[,"X"],C)
-y.obs=pmin(Dat[,"Y"],C)
-dx=Dat[,"X"]<=C
-dy=Dat[,"Y"]<=C
+
+x.obs=pmin(X,C)
+y.obs=pmin(Y,C)
+dx=X<=C
+dy=Y<=C
+
 Test.Clayton(x.obs,y.obs,dx,dy)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

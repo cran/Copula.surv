@@ -7,7 +7,7 @@ Estimate the association parameter of the Gumbel copula using bivariate survival
  The estimator was derived by Emura, Lin and Wang (2010).
 }
 \usage{
-U1.Gumbel(x.obs,y.obs,dx,dy,lower=0.1,upper=50,U.plot=TRUE)
+U1.Gumbel(x.obs,y.obs,dx,dy,lower=0.01,upper=50,U.plot=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -40,16 +40,9 @@ y.obs=c(2,1,4,5,6,8,3,7,10,9,11,12,13,14,15)
 dx=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 dy=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 U1.Gumbel(x.obs,y.obs,dx,dy)
-
-n=100
-Dat=simu.Clayton(n=n,scale1=1,scale2=2,shape1=0.5,shape2=2,alpha=1)
-x.obs=Dat[,"X"]
-y.obs=Dat[,"Y"]
-dx=dy=rep(1,n) ## uncensored data
-U1.Gumbel(x.obs,y.obs,dx,dy)
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ Gumbel copula }% use one of  RShowDoc("KEYWORDS")
-\keyword{ Estimation }% __ONLY ONE__ keyword per line
+\keyword{ Goodness-of-fit test }% __ONLY ONE__ keyword per line

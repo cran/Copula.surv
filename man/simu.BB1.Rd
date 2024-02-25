@@ -7,7 +7,7 @@ n pairs of (U,V) are generated from the BB1 copula.
 n paris of (X,Y) are generated from the corresponding bivariate survival model with the Weibull marginal distributions. The default parameters (scale1=scale2=shape1=shape2=1) give the unit exponential distributions.
 }
 \usage{
-simu.BB1(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1)
+simu.BB1(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1,Print=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +18,7 @@ simu.BB1(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1)
   \item{scale2}{scale parameter for Y}
   \item{shape1}{shape parameter for X}
   \item{shape2}{shape parameter for Y}
+  \item{Print}{print Kendall's tau and means of X and Y if "TRUE"}
 }
 
 \details{

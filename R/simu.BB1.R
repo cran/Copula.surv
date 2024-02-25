@@ -1,4 +1,5 @@
-simu.BB1=function(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1){
+simu.BB1=function(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1,
+                  Print=FALSE){
 
   U.vec=V.vec=X.vec=Y.vec=numeric(n)
   a=alpha
@@ -19,6 +20,13 @@ simu.BB1=function(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1){
     Y.vec[i]=(-log(V)/scale2)^(1/shape2)
   }
 
-  print(c(true_Kendall_tau=1-2/(d+1)/(a+2)))
+  if(Print==TRUE){
+    meanX=scale1^(-1/shape1)*gamma(1+1/shape1)
+    meanY=scale2^(-1/shape2)*gamma(1+1/shape2)
+    print(
+      c(true_Kendall_tau=1-2/(d+1)/(a+2),meanX=meanX,meanY=meanY)
+    )
+  }
+
   cbind(U=U.vec,V=V.vec,X=X.vec,Y=Y.vec)
 }

@@ -1,4 +1,5 @@
-simu.Gumbel=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
+simu.Gumbel=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1,
+                     Print=FALSE){
 
   U.vec=V.vec=X.vec=Y.vec=numeric(n)
   for (i in 1:n){
@@ -15,6 +16,14 @@ simu.Gumbel=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
     X.vec[i]=(-log(U)/scale1)^(1/shape1)
     Y.vec[i]=(-log(V)/scale2)^(1/shape2)
   }
-  print(c(true_Kendall_tau=alpha/(alpha+1)))
+
+  if(Print==TRUE){
+    meanX=scale1^(-1/shape1)*gamma(1+1/shape1)
+    meanY=scale2^(-1/shape2)*gamma(1+1/shape2)
+    print(
+      c(true_Kendall_tau=alpha/(alpha+1),meanX=meanX,meanY=meanY)
+    )
+  }
+
   cbind(U=U.vec,V=V.vec,X=X.vec,Y=Y.vec)
 }

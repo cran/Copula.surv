@@ -1,4 +1,5 @@
-simu.FGM=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
+simu.FGM=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1,
+                  Print=FALSE){
 
   if((-1>alpha)|(alpha>1)){warning("Should be -1<=alpha<=1")}
 
@@ -13,6 +14,13 @@ simu.FGM=function(n,alpha,scale1=1,scale2=1,shape1=1,shape2=1){
     X.vec[i]=(-log(U)/scale1)^(1/shape1)
     Y.vec[i]=(-log(V)/scale2)^(1/shape2)
   }
-  print(c(true_Kendall_tau=2*alpha/9))
+
+  if(Print==TRUE){
+    meanX=scale1^(-1/shape1)*gamma(1+1/shape1)
+    meanY=scale2^(-1/shape2)*gamma(1+1/shape2)
+    print(
+      c(true_Kendall_tau=2*alpha/9,meanX=meanX,meanY=meanY)
+    )
+  }
   cbind(U=U.vec,V=V.vec,X=X.vec,Y=Y.vec)
 }

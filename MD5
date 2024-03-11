@@ -1,4 +1,4 @@
-37238a960aa264e682901706ef7cd9cb *DESCRIPTION
+790bbf8841a9597d445fabc9fc9ac7f9 *DESCRIPTION
 430cae22b04ffe87fda14009b0802d17 *NAMESPACE
 04eb7ab624871c0db63834e8e02e0f65 *R/Test.Clayton.R
 60123f63265138e8a2d16dd173ccbb51 *R/Test.Gumbel.R
@@ -13,6 +13,7 @@ b424848ed48b3a144282babc6ce2e025 *R/Weib.reg.BB1.R
 483b6c9d0807dcc073134d1071e3ae8f *R/simu.Clayton.R
 402faafe63a8c23b024271b31e043204 *R/simu.FGM.R
 95319a841031d28bf69b660cb3c87310 *R/simu.Frank.R
+74b87a742347ab582dec7fff4356fa68 *R/simu.GB.R
 8383ff8dc323107ddc4293c2a199dcb2 *R/simu.Gumbel.R
 606e13d6e383f565f993a159cb782187 *man/Copula.surv-package.Rd
 15f5eb646cdbc7f60a9922c1d91fb970 *man/Test.Clayton.Rd
@@ -28,4 +29,5 @@ c6a6110ee172ff72907aa8cd8d0961e4 *man/Weib.reg.Clayton.Rd
 57a61051fc35a62b80b8032717681a51 *man/simu.Clayton.Rd
 b6643d772d4e24ff5bbf4dbeef5cb8f9 *man/simu.FGM.Rd
 8ef3b060137c3a49ef7319c02b0d809e *man/simu.Frank.Rd
+f3ff1f7e739a39b73d073720cc935943 *man/simu.GB.Rd
 79df0af1b47106efb7aab06a1305f127 *man/simu.Gumbel.Rd

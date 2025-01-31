@@ -1,8 +1,8 @@
 Package: Copula.surv
 Type: Package
 Title: Analysis of Bivariate Survival Data Based on Copulas
-Version: 1.7
-Date: 2024-10-26
+Version: 1.8
+Date: 2025-1-31
 Authors@R: person(given = "Takeshi",
                       family = "Emura",
                       role = c("aut", "cre"),
@@ -16,7 +16,7 @@ Description: Simulating bivariate survival data from copula models.
 License: GPL-2
 Depends: MASS
 NeedsCompilation: no
-Packaged: 2024-10-26 04:58:53 UTC; takes
+Packaged: 2025-01-31 06:20:18 UTC; takes
 Author: Takeshi Emura [aut, cre]
 Repository: CRAN
-Date/Publication: 2024-10-26 05:20:02 UTC
+Date/Publication: 2025-01-31 06:40:02 UTC

@@ -1,4 +1,4 @@
-30584f7a293b40344b406ebd8d6fda9a *DESCRIPTION
+e161d4b72cbb6e86911ad7bb8cf8e5cd *DESCRIPTION
 d664413e30e869279aadc270109456b9 *NAMESPACE
 04eb7ab624871c0db63834e8e02e0f65 *R/Test.Clayton.R
 60123f63265138e8a2d16dd173ccbb51 *R/Test.Gumbel.R
@@ -9,6 +9,7 @@ d664413e30e869279aadc270109456b9 *NAMESPACE
 c3d6632cf1e16d7b88de4297e6539513 *R/Weib.reg.BB1.0.R
 b424848ed48b3a144282babc6ce2e025 *R/Weib.reg.BB1.R
 5df11554c8db05ba622c29c3ee3ed924 *R/Weib.reg.Clayton.R
+27d728e95d4a547e6b7b85ccdd8bb298 *R/Weib.reg.Frank.R
 ced62269f6fd67e1d707dfa89d49b204 *R/Weib.reg.Gumbel.R
 34615c617d5557e1e0bbab97f48bc09f *R/simu.BB1.R
 fb5cdde4ee2c9050cbb874230362cf98 *R/simu.CC.R
@@ -29,6 +30,7 @@ f59a8722579f037d7b876c0da2427af6 *man/U1.Gumbel.Rd
 1d38982bba4d13f6dedecd2fdcc68196 *man/Weib.reg.BB1.0.Rd
 a827c645632f7e403bfff0cae1e5f87d *man/Weib.reg.BB1.Rd
 c6a6110ee172ff72907aa8cd8d0961e4 *man/Weib.reg.Clayton.Rd
+54fe0cc0d9e7f32442d75c6b2cad2613 *man/Weib.reg.Frank.Rd
 259d6b0aa12958eb5cebd8bd5c118258 *man/Weib.reg.Gumbel.Rd
 7db08d74c7566e5c99e71a3516f2c933 *man/simu.BB1.Rd
 1b9fdc62a018724f98c56d4ad9c3028f *man/simu.CC.Rd

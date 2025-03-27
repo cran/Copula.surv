@@ -1,8 +1,9 @@
-simu.BB1=function(n,alpha,d=0,scale1=1,scale2=1,shape1=1,shape2=1,
+simu.BB1=function(n,alpha,delta=0,scale1=1,scale2=1,shape1=1,shape2=1,
                   Print=FALSE){
 
   U.vec=V.vec=X.vec=Y.vec=numeric(n)
   a=alpha
+  d=delta
   for (i in 1:n){
     U=runif(1, 0, 1)
     W=runif(1, 0, 1)

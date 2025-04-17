@@ -29,6 +29,9 @@ Details are seen from the references.
   \item{beta_x}{regression coefficients for X}
   \item{beta_y}{regression coefficients for Y}
   \item{beta_xy}{regression coefficients for copula}
+  \item{alpha}{copula parameter}
+  \item{tau}{Kendall's tau given beta_xy=0}
+
 }
 \references{
 Emura T, Matsui S, Rondeau V (2019), Survival Analysis with Correlated Endpoints, Joint Frailty-Copula Models, JSS Research Series in Statistics, Springer

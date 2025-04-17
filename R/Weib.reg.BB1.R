@@ -100,7 +100,7 @@ Weib.reg.BB1=function(x.obs,y.obs,dx,dy,zx,zy,
     convergence.parameters=list(log_estimate=res$est,gradient=-res$gradient,log_var=V)
   }
   list(Number=count,Proportion=CEN,
-       beta_x=bx_res,beta_y=by_res,alpha=a_res,d=d_res,tau=tau_res,
+       beta_x=bx_res,beta_y=by_res,alpha=a_res,delta=d_res,tau=tau_res,
        scale_x=rx,shape_x=vx,scale_y=ry,shape_y=vy,
        convergence=convergence_res,convergence.parameters=convergence.parameters)
 }

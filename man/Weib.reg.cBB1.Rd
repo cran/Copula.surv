@@ -1,12 +1,12 @@
-\name{Weib.reg.BB1.0}
-\alias{Weib.reg.BB1.0}
+\name{Weib.reg.cBB1}
+\alias{Weib.reg.cBB1}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Weibull regression under the BB1 copula with known "delta"}
+\title{Weibull regression under the conditional BB1 copula}
 \description{
 See Section 2.6.3 of Emura et al. (2019).
 }
 \usage{
-Weib.reg.BB1.0(x.obs,y.obs,dx,dy,zx,zy,delta=0,convergence.par=FALSE)
+Weib.reg.cBB1(x.obs,y.obs,dx,dy,zx,zy,zxy,convergence.par=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,7 +16,7 @@ Weib.reg.BB1.0(x.obs,y.obs,dx,dy,zx,zy,delta=0,convergence.par=FALSE)
   \item{dy}{censoring indicators for Y}
   \item{zx}{matrix of covariates for X}
   \item{zy}{matrix of covariates for Y}
-  \item{delta}{known copula parameter (d>=0)}
+  \item{zxy}{matrix of covariates for copula}
   \item{convergence.par}{if TRUE, show the details}
 }
 
@@ -27,8 +27,10 @@ Details are seen from the references.
 \value{
   \item{beta_x}{regression coefficients for X}
   \item{beta_y}{regression coefficients for Y}
+  \item{beta_xy}{regression coefficients for copula}
   \item{alpha}{copula parameter}
-  \item{tau}{Kendall's tau}
+  \item{delta}{copula parameter}
+  \item{tau}{Kendall's tau given beta_xy=0}
 
 }
 \references{
